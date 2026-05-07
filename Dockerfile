@@ -4,10 +4,10 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm ci
 COPY . .
-RUN npm run build -- --base-href /
+RUN npm run build
 
 # Stage 2: serve
 FROM nginx:1.27-alpine
-COPY --from=builder /app/dist/byte-village/browser/en /usr/share/nginx/html
+COPY --from=builder /app/dist/byte-village/browser /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 8080

@@ -28,7 +28,7 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/styles.css"],
             "scripts": [],
-            "localize": ["en"]
+            "localize": false
           },
           "configurations": {
             "fr": { "localize": ["fr"] },
