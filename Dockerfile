@@ -4,7 +4,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm ci
 COPY . .
-RUN npm run build
+RUN npm run build -- --base-href /
 
 # Stage 2: serve
 FROM nginx:1.27-alpine
