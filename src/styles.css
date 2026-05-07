@@ -1,0 +1,112 @@
+/* ============================================================================
+ *  BYTE VILLAGE — GLOBAL STYLES
+ * ============================================================================
+ *
+ *  Brand color tokens are defined here as CSS custom properties.
+ *  To rebrand, change values in :root below — all components inherit them.
+ *  Logical values (--bv-blue, --bv-yellow, --bv-navy) are mapped from
+ *  src/app/site-content.ts via app.component.ts on init.
+ * ========================================================================= */
+
+:root {
+  --bv-blue:        #1433D6;
+  --bv-blue-2:      #2563EB;
+  --bv-blue-deep:   #0A1F8F;
+  --bv-navy:        #11103B;
+  --bv-yellow:      #F8D613;
+  --bv-yellow-deep: #D1B200;
+  --bv-teal:        #14B8A6;
+
+  --bv-bg:          #FFFFFF;
+  --bv-bg-soft:     #F6F7FB;
+  --bv-bg-mid:      #EEF1F8;
+  --bv-text:        #0E1230;
+  --bv-text-muted:  #5A607A;
+  --bv-text-faint:  #8A90AB;
+  --bv-border:      rgba(17, 16, 59, 0.08);
+  --bv-border-strong: rgba(17, 16, 59, 0.18);
+
+  --bv-font:    'Inter', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --bv-mono:    'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --bv-radius-sm: 8px;
+  --bv-radius:    14px;
+  --bv-radius-lg: 22px;
+  --bv-radius-xl: 32px;
+
+  --bv-shadow-card:  0 1px 2px rgba(17, 16, 59, 0.04), 0 8px 28px rgba(17, 16, 59, 0.08);
+  --bv-shadow-float: 0 1px 2px rgba(17, 16, 59, 0.04), 0 22px 50px rgba(17, 16, 59, 0.18);
+
+  --bv-page-pad: clamp(20px, 5vw, 88px);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  font-family: var(--bv-font);
+  color: var(--bv-text);
+  background: var(--bv-bg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: inherit; }
+
+img, svg { display: block; max-width: 100%; }
+
+/* Generic helpers reused across components */
+.bv-section {
+  padding: clamp(72px, 9vw, 132px) var(--bv-page-pad);
+  position: relative;
+}
+.bv-eyebrow {
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--bv-text-muted);
+  display: inline-flex; align-items: center; gap: 10px;
+}
+.bv-eyebrow::before {
+  content: ''; width: 22px; height: 1px; background: var(--bv-text-muted);
+}
+
+.bv-h1, .bv-h2, .bv-h3 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin: 0;
+  text-wrap: balance;
+}
+.bv-h1 { font-size: clamp(48px, 7.4vw, 108px); letter-spacing: -0.035em; }
+.bv-h2 { font-size: clamp(36px, 4.6vw, 64px); letter-spacing: -0.025em; }
+.bv-h3 { font-size: clamp(22px, 2vw, 28px); letter-spacing: -0.015em; }
+
+.bv-lead { font-size: clamp(17px, 1.3vw, 20px); color: var(--bv-text-muted); }
+
+/* Button system */
+.bv-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font: 500 15px/1 var(--bv-font);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+.bv-btn:hover { transform: translateY(-1px); }
+.bv-btn--primary { background: var(--bv-text); color: white; }
+.bv-btn--primary:hover { background: var(--bv-blue); }
+.bv-btn--yellow  { background: var(--bv-yellow); color: var(--bv-text); }
+.bv-btn--yellow:hover { background: var(--bv-yellow-deep); }
+.bv-btn--ghost   { background: transparent; color: var(--bv-text); border-color: var(--bv-border-strong); }
+.bv-btn--ghost:hover { border-color: var(--bv-text); }
+.bv-btn--ghost-light { background: transparent; color: white; border-color: rgba(255,255,255,0.3); }
+.bv-btn--ghost-light:hover { border-color: white; background: rgba(255,255,255,0.06); }
+
+/* Reduce motion respectfully */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
