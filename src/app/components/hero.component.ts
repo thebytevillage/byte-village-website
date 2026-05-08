@@ -38,56 +38,35 @@ import { HERO } from '../site-content';
           </ul>
         </div>
 
-        <!-- Floating product cards -->
+        <!-- Hero brand visual -->
         <div class="hero__visual" aria-hidden="true">
-          <div class="hero__bg-hex">
-            <svg viewBox="0 0 200 200" fill="none">
-              <path d="M100 6 L182 53 L182 147 L100 194 L18 147 L18 53 Z"
-                stroke="var(--bv-blue)" stroke-width="1" stroke-dasharray="2 4" opacity="0.25" />
-              <path d="M100 26 L162 65 L162 135 L100 174 L38 135 L38 65 Z"
-                stroke="var(--bv-blue)" stroke-width="1" stroke-dasharray="2 4" opacity="0.18" />
-            </svg>
+          <!-- Subtle grid background -->
+          <div class="hero__grid-bg"></div>
+
+          <!-- Floating B orb -->
+          <div class="hero__orb-wrap">
+            <div class="hero__orb-shadow"></div>
+            <div class="hero__orb">
+              <span class="hero__orb-letter">B</span>
+            </div>
           </div>
 
-          <div class="card card--volume">
-            <div class="card__head">
-              <span class="card__title">{{ 'hero.card.volume.title' | t }}</span>
-              <span class="card__dot"></span>
-            </div>
-            <div class="card__metric">{{ 'hero.card.volume.metric' | t }}</div>
-            <div class="card__delta">▲ {{ 'hero.card.volume.delta' | t }}</div>
-            <svg viewBox="0 0 200 60" class="card__chart">
-              <path d="M0 50 L20 42 L40 46 L60 30 L80 36 L100 22 L120 26 L140 14 L160 18 L180 8 L200 12"
-                fill="none" stroke="var(--bv-blue)" stroke-width="2.5" stroke-linecap="round"/>
-              <path d="M0 50 L20 42 L40 46 L60 30 L80 36 L100 22 L120 26 L140 14 L160 18 L180 8 L200 12 L200 60 L0 60 Z"
-                fill="url(#g)" opacity="0.18"/>
-              <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="var(--bv-blue)"/>
-                <stop offset="1" stop-color="var(--bv-blue)" stop-opacity="0"/>
-              </linearGradient></defs>
-            </svg>
+          <!-- Floating badges -->
+          <div class="hero__badge hero__badge--tl">
+            <span class="badge__dot badge__dot--green"></span>
+            <span>Kampala, UG</span>
           </div>
-
-          <div class="card card--region">
-            <div class="card__head">
-              <span class="card__title">{{ 'hero.card.region.title' | t }}</span>
-            </div>
-            <div class="card__regions">
-              <span class="pill"><span class="pill__dot"></span>Nairobi</span>
-              <span class="pill"><span class="pill__dot"></span>Lagos</span>
-              <span class="pill"><span class="pill__dot"></span>Accra</span>
-            </div>
-            <div class="card__caption">{{ 'hero.card.region.status' | t }}</div>
+          <div class="hero__badge hero__badge--tr">
+            <span>99.99% uptime</span>
+            <span class="badge__icon">↑</span>
           </div>
-
-          <div class="card card--signal">
-            <div class="card__signal">
-              <div class="card__signal-bars"><span></span><span></span><span></span><span></span></div>
-              <div>
-                <div class="card__title">{{ 'hero.card.signal.title' | t }}</div>
-                <div class="card__caption">{{ 'hero.card.signal.body' | t }}</div>
-              </div>
-            </div>
+          <div class="hero__badge hero__badge--bl">
+            <span class="badge__dot badge__dot--yellow"></span>
+            <span>MTN · Airtel live</span>
+          </div>
+          <div class="hero__badge hero__badge--br">
+            <span>6 countries</span>
+            <span class="badge__icon">🌍</span>
           </div>
         </div>
       </div>
@@ -132,38 +111,96 @@ import { HERO } from '../site-content';
     .hero__metric-unit { font: 600 16px/1 var(--bv-font); color: var(--bv-text-muted); }
     .hero__metric-label { font-size: 13px; color: var(--bv-text-muted); margin-top: 4px; }
 
-    .hero__visual { position: relative; aspect-ratio: 1 / 1.05; min-height: 480px; }
-    .hero__bg-hex { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
-    .hero__bg-hex svg { width: 96%; height: 96%; }
-
-    .card {
-      position: absolute; background: white; border: 1px solid var(--bv-border);
-      border-radius: var(--bv-radius); padding: 18px;
-      box-shadow: var(--bv-shadow-float);
+    .hero__visual {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .card--volume { top: 6%; left: 4%; width: 60%; }
-    .card--region { bottom: 12%; left: 14%; width: 56%; }
-    .card--signal { top: 28%; right: 4%; width: 48%; }
 
-    .card__head { display: flex; align-items: center; justify-content: space-between; }
-    .card__title { font-size: 13px; font-weight: 600; color: var(--bv-text-muted); }
-    .card__dot { width: 8px; height: 8px; border-radius: 999px; background: #22C55E; box-shadow: 0 0 0 4px rgba(34,197,94,0.18); }
-    .card__metric { font: 800 32px/1 var(--bv-font); letter-spacing: -0.02em; margin-top: 8px; }
-    .card__delta { font: 600 12px/1 var(--bv-font); color: #16A34A; margin-top: 6px; }
-    .card__chart { width: 100%; height: 60px; margin-top: 6px; }
+    /* Subtle dot-grid background */
+    .hero__grid-bg {
+      position: absolute; inset: 0; border-radius: 24px;
+      background-image: radial-gradient(circle, rgba(20,51,214,0.12) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+    }
 
-    .card__regions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
-    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 999px; background: var(--bv-bg-mid); font: 500 12px/1 var(--bv-font); }
-    .pill__dot { width: 6px; height: 6px; border-radius: 999px; background: var(--bv-blue); }
-    .card__caption { font-size: 12px; color: var(--bv-text-muted); margin-top: 10px; }
+    /* Orb wrapper animates up/down */
+    .hero__orb-wrap {
+      position: relative;
+      display: flex; flex-direction: column; align-items: center;
+      animation: bv-float 3.2s ease-in-out infinite;
+      z-index: 2;
+    }
+    @keyframes bv-float {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-22px); }
+    }
 
-    .card__signal { display: flex; align-items: center; gap: 12px; }
-    .card__signal-bars { display: inline-flex; align-items: end; gap: 3px; height: 28px; }
-    .card__signal-bars span { width: 4px; background: var(--bv-blue); border-radius: 1px; }
-    .card__signal-bars span:nth-child(1){ height: 30%; }
-    .card__signal-bars span:nth-child(2){ height: 55%; }
-    .card__signal-bars span:nth-child(3){ height: 75%; }
-    .card__signal-bars span:nth-child(4){ height: 100%; background: var(--bv-yellow); }
+    /* Squash-and-stretch shadow that shrinks as the B rises */
+    .hero__orb-shadow {
+      width: 120px; height: 18px;
+      background: radial-gradient(ellipse, rgba(20,51,214,0.22) 0%, transparent 70%);
+      border-radius: 50%;
+      margin-bottom: 18px;
+      animation: bv-shadow 3.2s ease-in-out infinite;
+    }
+    @keyframes bv-shadow {
+      0%, 100% { transform: scaleX(1);   opacity: 1;    }
+      50%       { transform: scaleX(0.6); opacity: 0.45; }
+    }
+
+    /* The white card that holds the B */
+    .hero__orb {
+      width: 200px; height: 200px;
+      background: white;
+      border-radius: 32px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow:
+        0 8px 32px rgba(20,51,214,0.13),
+        0 2px 8px rgba(0,0,0,0.06),
+        0 0 0 1px rgba(20,51,214,0.06);
+    }
+
+    .hero__orb-letter {
+      font-family: var(--bv-font);
+      font-weight: 900;
+      font-size: 130px;
+      line-height: 1;
+      color: var(--bv-yellow);
+      text-shadow: 0 6px 24px rgba(248,214,19,0.45);
+      letter-spacing: -0.04em;
+      user-select: none;
+    }
+
+    /* Floating info badges */
+    .hero__badge {
+      position: absolute;
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 9px 14px;
+      background: white;
+      border: 1px solid var(--bv-border);
+      border-radius: 999px;
+      font: 600 12px/1 var(--bv-font);
+      color: var(--bv-text);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      white-space: nowrap;
+      z-index: 3;
+    }
+    .hero__badge--tl { top: 10%;  left: 0;   animation: bv-float 3.8s ease-in-out 0.4s infinite; }
+    .hero__badge--tr { top: 18%;  right: 0;  animation: bv-float 3.4s ease-in-out 1.1s infinite; }
+    .hero__badge--bl { bottom: 22%; left: 2%; animation: bv-float 4.0s ease-in-out 0.7s infinite; }
+    .hero__badge--br { bottom: 12%; right: 0; animation: bv-float 3.6s ease-in-out 1.6s infinite; }
+
+    .badge__dot {
+      width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0;
+    }
+    .badge__dot--green  { background: #22C55E; box-shadow: 0 0 0 3px rgba(34,197,94,0.2); }
+    .badge__dot--yellow { background: var(--bv-yellow); box-shadow: 0 0 0 3px rgba(248,214,19,0.25); }
+    .badge__icon { font-size: 14px; }
   `],
 })
 export class HeroComponent {

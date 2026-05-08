@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 48" role="img" aria-label="Airtel">
+  <rect width="140" height="48" rx="8" fill="#fff"/>
+  <!-- Red swoosh arc -->
+  <path d="M18 36 Q38 8 62 14 Q82 20 70 36" fill="#E40000" opacity="0.15"/>
+  <text x="70" y="33" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="22" fill="#E40000" text-anchor="middle" letter-spacing="-0.5">airtel</text>
+</svg>

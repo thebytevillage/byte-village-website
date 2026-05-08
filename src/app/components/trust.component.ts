@@ -28,7 +28,9 @@ import { TRUST_LOGOS } from '../site-content';
     .trust__title { text-align: center; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--bv-text-muted); margin: 0 0 24px; }
     .trust__row { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; align-items: center; }
     @media (max-width: 880px) { .trust__row { grid-template-columns: repeat(3, 1fr); } }
-    .trust__item { display: flex; align-items: center; justify-content: center; height: 56px; border: 1px dashed var(--bv-border-strong); border-radius: var(--bv-radius-sm); }
+    .trust__item { display: flex; align-items: center; justify-content: center; height: 56px; border: 1px dashed var(--bv-border-strong); border-radius: var(--bv-radius-sm); padding: 8px 12px; }
+    .trust__item img { max-height: 36px; max-width: 100%; width: auto; object-fit: contain; filter: grayscale(30%); transition: filter .2s; }
+    .trust__item img:hover { filter: grayscale(0%); }
     .trust__placeholder { font: 500 12px/1 var(--bv-mono); color: var(--bv-text-faint); letter-spacing: 0.06em; text-transform: uppercase; }
   `],
 })
