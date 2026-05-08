@@ -52,11 +52,11 @@ export const EN: Strings = {
   'product.alfasente.feat.collect.body': 'M-Pesa, MTN MoMo, Airtel Money, bank transfer, card.',
   'product.alfasente.feat.payout.title': 'Payout in seconds',
   'product.alfasente.feat.payout.body': 'Settle to wallets and accounts in under 8 seconds.',
-  'product.alfasente.feat.pos.title': 'POS for retail',
-  'product.alfasente.feat.pos.body': 'Hardware and SoftPOS for in-person.',
+  'product.alfasente.feat.pos.title': 'SoftPOS for retail',
+  'product.alfasente.feat.pos.body': 'SoftPOS for in-person payments — no hardware required.',
   'product.alfasente.feat.api.title': 'One API',
   'product.alfasente.feat.api.body': 'Idempotent, versioned, beautifully documented.',
-  'product.alfasente.tagline': 'Available in Kenya, Uganda, Tanzania, Rwanda, Nigeria, Ghana.',
+  'product.alfasente.tagline': 'Currently live in Uganda. Expanding across East Africa.',
   'product.alfasente.cta': 'Explore Alfasente →',
 
   // bytecloud
@@ -85,7 +85,7 @@ export const EN: Strings = {
   'product.dev.feat.idem.body': 'Built into every endpoint. No surprises in production.',
   'product.dev.feat.tel.title': 'Logs, traces, dashboards',
   'product.dev.feat.tel.body': 'Inspect every request. Replay any webhook.',
-  'product.dev.cta': 'Open the docs →',
+  'product.dev.cta': 'Coming soon →',
 
   // bytelab
   'product.bytelab.tag': 'Studio',

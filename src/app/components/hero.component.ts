@@ -22,8 +22,8 @@ import { HERO } from '../site-content';
           </h1>
           <p class="bv-lead hero__sub">{{ hero.subtitleKey | t }}</p>
           <div class="hero__cta">
-            <a class="bv-btn bv-btn--primary" [href]="hero.primaryCta.href">{{ hero.primaryCta.labelKey | t }}</a>
-            <a class="bv-btn bv-btn--ghost" [href]="hero.secondaryCta.href">{{ hero.secondaryCta.labelKey | t }}</a>
+            <a class="bv-btn bv-btn--primary" href="mailto:office@thebytevillage.com">{{ hero.primaryCta.labelKey | t }}</a>
+            <a class="bv-btn bv-btn--ghost" href="mailto:office@thebytevillage.com">{{ hero.secondaryCta.labelKey | t }}</a>
           </div>
           <ul class="hero__metrics">
             @for (m of hero.metrics; track m.labelKey) {

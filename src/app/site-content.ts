@@ -84,8 +84,8 @@ export const HERO = {
     highlightKey: 'hero.title.highlight' as I18nKey, // "Future"
   },
   subtitleKey: 'hero.subtitle' as I18nKey,
-  primaryCta: { labelKey: 'cta.startBuilding' as I18nKey, href: '#alfasente' },
-  secondaryCta: { labelKey: 'cta.talkToSales' as I18nKey, href: '#contact' },
+  primaryCta: { labelKey: 'cta.startBuilding' as I18nKey, href: 'mailto:office@thebytevillage.com' },
+  secondaryCta: { labelKey: 'cta.talkToSales' as I18nKey, href: 'mailto:office@thebytevillage.com' },
   metrics: [
     { labelKey: 'hero.metric.uptime.label' as I18nKey,  value: '99.99', unit: '%' },
     { labelKey: 'hero.metric.countries.label' as I18nKey, value: '6', unit: '+' },
@@ -158,7 +158,7 @@ export const PRODUCTS: Product[] = [
       { iconGlyph: '{}', titleKey: 'product.alfasente.feat.api.title',      bodyKey: 'product.alfasente.feat.api.body' },
     ],
     taglineKey: 'product.alfasente.tagline',
-    cta: { labelKey: 'product.alfasente.cta', href: '#', style: 'primary' },
+    cta: { labelKey: 'product.alfasente.cta', href: 'https://alfasente.com', style: 'primary' },
   },
   {
     id: 'bytecloud',
@@ -181,6 +181,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'developers',
+    comingSoon: true,
     visualKind: 'code',
     tagGlyph: '{ }',
     tagKey: 'product.dev.tag',

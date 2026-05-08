@@ -45,7 +45,9 @@ import { Product } from '../site-content';
              [class.bv-btn--primary]="product.cta.style === 'primary'"
              [class.bv-btn--yellow]="product.cta.style === 'yellow'"
              [class.bv-btn--ghost]="product.cta.style === 'ghost'"
-             [href]="product.cta.href">{{ product.cta.labelKey | t }}</a>
+             [href]="product.cta.href"
+             [target]="product.cta.href.startsWith('http') ? '_blank' : '_self'"
+             [rel]="product.cta.href.startsWith('http') ? 'noopener noreferrer' : null">{{ product.cta.labelKey | t }}</a>
         </div>
 
         <div class="product__visual">

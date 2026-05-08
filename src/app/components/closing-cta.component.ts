@@ -12,8 +12,8 @@ import { TPipe } from '../i18n/t.pipe';
         <h2 class="bv-h2">{{ 'closing.title' | t }}</h2>
         <p class="bv-lead">{{ 'closing.subtitle' | t }}</p>
         <div class="cta__btns">
-          <a class="bv-btn bv-btn--yellow" href="#">{{ 'cta.startBuilding' | t }}</a>
-          <a class="bv-btn bv-btn--ghost-light" href="#">{{ 'cta.talkToSales' | t }}</a>
+          <a class="bv-btn bv-btn--yellow" href="mailto:office@thebytevillage.com">{{ 'cta.startBuilding' | t }}</a>
+          <a class="bv-btn bv-btn--ghost-light" href="mailto:office@thebytevillage.com">{{ 'cta.talkToSales' | t }}</a>
         </div>
       </div>
     </section>
