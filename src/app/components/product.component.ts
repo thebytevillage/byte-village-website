@@ -69,7 +69,7 @@ import { Product } from '../site-content';
           <div class="phone__row"><span>Alfasente</span><span>•••</span></div>
           <div class="phone__balance">
             <div class="phone__balance-label">Balance</div>
-            <div class="phone__balance-amount">$8,420.50</div>
+            <div class="phone__balance-amount">UGX 30,420,500</div>
           </div>
           <div class="phone__actions">
             <div class="phone__action"><span>↑</span>Send</div>
@@ -79,15 +79,15 @@ import { Product } from '../site-content';
           </div>
           <div class="phone__list-title">Recent</div>
           <ul class="phone__list">
-            <li><span class="phone__avatar">M</span><div><strong>M-Pesa payout</strong><small>Today · 10:42</small></div><span class="phone__amt">+$240</span></li>
-            <li><span class="phone__avatar bg-yellow">A</span><div><strong>Airtel Money</strong><small>Today · 09:15</small></div><span class="phone__amt">+$80</span></li>
-            <li><span class="phone__avatar bg-navy">B</span><div><strong>Bank transfer</strong><small>Yesterday</small></div><span class="phone__amt neg">−$1,200</span></li>
+            <li><span class="phone__avatar">M</span><div><strong>MTN MoMo</strong><small>Today · 10:42</small></div><span class="phone__amt">+880,000</span></li>
+            <li><span class="phone__avatar bg-yellow">A</span><div><strong>Airtel Money</strong><small>Today · 09:15</small></div><span class="phone__amt">+292,000</span></li>
+            <li><span class="phone__avatar bg-navy">B</span><div><strong>Bank transfer</strong><small>Yesterday</small></div><span class="phone__amt neg">−4,380,000</span></li>
           </ul>
         </div>
       </div>
       <div class="receipt">
         <div class="receipt__top">RECEIPT · #58291</div>
-        <div class="receipt__amt">$24.00</div>
+        <div class="receipt__amt">UGX 88,000</div>
         <div class="receipt__row"><span>Method</span><span>SoftPOS</span></div>
         <div class="receipt__row"><span>Status</span><span class="ok">Approved</span></div>
         <div class="receipt__bar"></div>
@@ -206,7 +206,7 @@ import { Product } from '../site-content';
     .phone__notch { position: absolute; top: 18px; left: 50%; transform: translateX(-50%); width: 88px; height: 22px; background: black; border-radius: 999px; z-index: 2; }
     .phone__screen { background: white; border-radius: 26px; padding: 36px 16px 20px; height: 100%; overflow: hidden; }
     .phone__row { display: flex; justify-content: space-between; font: 600 12px/1 var(--bv-font); color: var(--bv-text-muted); }
-    .phone__balance { margin: 18px 0 16px; padding: 16px; background: linear-gradient(135deg, var(--bv-blue), var(--bv-blue-deep)); border-radius: 14px; color: white; }
+    .phone__balance { margin: 18px 0 16px; padding: 16px; background: linear-gradient(135deg, #7C3AED, #4C1D95); border-radius: 14px; color: white; }
     .phone__balance-label { font-size: 11px; opacity: 0.8; }
     .phone__balance-amount { font: 800 26px/1 var(--bv-font); letter-spacing: -0.02em; margin-top: 4px; }
     .phone__actions { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 18px; }
