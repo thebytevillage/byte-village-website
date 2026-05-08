@@ -105,12 +105,10 @@ export interface TrustLogo {
 }
 
 export const TRUST_LOGOS: TrustLogo[] = [
-  { imgSrc: 'assets/mtn-logo.svg',     alt: 'MTN' },
-  { imgSrc: 'assets/airtel-logo.svg',  alt: 'Airtel' },
-  { imgSrc: 'assets/safetec-logo.jpg', alt: 'Safetec Security Ltd' },
-  { placeholderKey: 'logos.bank' },
-  { placeholderKey: 'logos.fintech' },
-  { placeholderKey: 'logos.saas' },
+  { imgSrc: 'assets/mtn-logo.svg',       alt: 'MTN' },
+  { imgSrc: 'assets/airtel-logo.png',    alt: 'Airtel' },
+  { imgSrc: 'assets/safetec-logo.jpg',   alt: 'Safetec Security Ltd' },
+  { imgSrc: 'assets/alfasente-logo.png', alt: 'Alfasente' },
 ];
 
 // ----------------------------------------------------------------------------

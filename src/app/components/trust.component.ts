@@ -13,11 +13,7 @@ import { TRUST_LOGOS } from '../site-content';
       <ul class="trust__row">
         @for (logo of logos; track $index) {
           <li class="trust__item">
-            @if (logo.imgSrc) {
-              <img [src]="logo.imgSrc" [alt]="logo.alt || ''" />
-            } @else {
-              <span class="trust__placeholder">{{ logo.placeholderKey! | t }}</span>
-            }
+            <img [src]="logo.imgSrc" [alt]="logo.alt || ''" />
           </li>
         }
       </ul>
@@ -26,12 +22,10 @@ import { TRUST_LOGOS } from '../site-content';
   styles: [`
     .trust { padding: 24px var(--bv-page-pad) 56px; border-top: 1px solid var(--bv-border); }
     .trust__title { text-align: center; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--bv-text-muted); margin: 0 0 24px; }
-    .trust__row { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; align-items: center; }
-    @media (max-width: 880px) { .trust__row { grid-template-columns: repeat(3, 1fr); } }
-    .trust__item { display: flex; align-items: center; justify-content: center; height: 56px; border: 1px dashed var(--bv-border-strong); border-radius: var(--bv-radius-sm); padding: 8px 12px; }
-    .trust__item img { max-height: 36px; max-width: 100%; width: auto; object-fit: contain; filter: grayscale(30%); transition: filter .2s; }
+    .trust__row { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: center; }
+    .trust__item { display: flex; align-items: center; justify-content: center; height: 64px; min-width: 140px; padding: 10px 24px; border: 1px solid var(--bv-border); border-radius: var(--bv-radius-sm); background: white; }
+    .trust__item img { max-height: 40px; max-width: 140px; width: auto; object-fit: contain; filter: grayscale(20%); transition: filter .2s; }
     .trust__item img:hover { filter: grayscale(0%); }
-    .trust__placeholder { font: 500 12px/1 var(--bv-mono); color: var(--bv-text-faint); letter-spacing: 0.06em; text-transform: uppercase; }
   `],
 })
 export class TrustComponent {

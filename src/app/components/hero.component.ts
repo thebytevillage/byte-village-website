@@ -43,12 +43,10 @@ import { HERO } from '../site-content';
           <!-- Subtle grid background -->
           <div class="hero__grid-bg"></div>
 
-          <!-- Floating B orb -->
+          <!-- Floating logo orb -->
           <div class="hero__orb-wrap">
             <div class="hero__orb-shadow"></div>
-            <div class="hero__orb">
-              <span class="hero__orb-letter">B</span>
-            </div>
+            <img src="assets/logo-mark-yellow.svg" alt="Byte Village" class="hero__orb-logo" />
           </div>
 
           <!-- Floating badges -->
@@ -153,27 +151,10 @@ import { HERO } from '../site-content';
       50%       { transform: scaleX(0.6); opacity: 0.45; }
     }
 
-    /* The white card that holds the B */
-    .hero__orb {
-      width: 200px; height: 200px;
-      background: white;
-      border-radius: 32px;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow:
-        0 8px 32px rgba(20,51,214,0.13),
-        0 2px 8px rgba(0,0,0,0.06),
-        0 0 0 1px rgba(20,51,214,0.06);
-    }
-
-    .hero__orb-letter {
-      font-family: var(--bv-font);
-      font-weight: 900;
-      font-size: 130px;
-      line-height: 1;
-      color: var(--bv-yellow);
-      text-shadow: 0 6px 24px rgba(248,214,19,0.45);
-      letter-spacing: -0.04em;
-      user-select: none;
+    .hero__orb-logo {
+      width: 360px; height: 390px;
+      object-fit: contain;
+      filter: drop-shadow(0 6px 18px rgba(248,214,19,0.45));
     }
 
     /* Floating info badges */
