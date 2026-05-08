@@ -52,45 +52,35 @@ import { Product } from '../site-content';
 
         <div class="product__visual">
           @switch (product.visualKind) {
-            @case ('phone') { <ng-container *ngTemplateOutlet="phone"></ng-container> }
-            @case ('cloud') { <ng-container *ngTemplateOutlet="cloud"></ng-container> }
-            @case ('code')  { <ng-container *ngTemplateOutlet="code"></ng-container> }
+            @case ('pos')      { <ng-container *ngTemplateOutlet="pos"></ng-container> }
+            @case ('cloud')    { <ng-container *ngTemplateOutlet="cloud"></ng-container> }
+            @case ('code')     { <ng-container *ngTemplateOutlet="code"></ng-container> }
             @case ('pipeline') { <ng-container *ngTemplateOutlet="pipeline"></ng-container> }
           }
         </div>
       </div>
     </section>
 
-    <!-- Phone visual (Alfasente) -->
-    <ng-template #phone>
-      <div class="phone">
-        <div class="phone__notch"></div>
-        <div class="phone__screen">
-          <div class="phone__row"><span>Alfasente</span><span>•••</span></div>
-          <div class="phone__balance">
-            <div class="phone__balance-label">Balance</div>
-            <div class="phone__balance-amount">UGX 30,420,500</div>
+    <!-- POS visual (Alfasente) -->
+    <ng-template #pos>
+      <div class="pos-visual">
+        <div class="pos-visual__frame">
+          <div class="pos-visual__bar">
+            <span class="d r"></span><span class="d y"></span><span class="d g"></span>
+            <span class="pos-visual__url">pos.alfasente.com</span>
           </div>
-          <div class="phone__actions">
-            <div class="phone__action"><span>↑</span>Send</div>
-            <div class="phone__action"><span>↓</span>Receive</div>
-            <div class="phone__action"><span>⊕</span>Top up</div>
-            <div class="phone__action"><span>⇄</span>Convert</div>
-          </div>
-          <div class="phone__list-title">Recent</div>
-          <ul class="phone__list">
-            <li><span class="phone__avatar">M</span><div><strong>MTN MoMo</strong><small>Today · 10:42</small></div><span class="phone__amt">+880,000</span></li>
-            <li><span class="phone__avatar bg-yellow">A</span><div><strong>Airtel Money</strong><small>Today · 09:15</small></div><span class="phone__amt">+292,000</span></li>
-            <li><span class="phone__avatar bg-navy">B</span><div><strong>Bank transfer</strong><small>Yesterday</small></div><span class="phone__amt neg">−4,380,000</span></li>
-          </ul>
+          <img
+            src="https://pos.alfasente.com/_next/image?url=%2Fimages%2Fheroimage.png&w=1200&q=85"
+            alt="Alfasente POS dashboard"
+            class="pos-visual__img"
+          />
         </div>
-      </div>
-      <div class="receipt">
-        <div class="receipt__top">RECEIPT · #58291</div>
-        <div class="receipt__amt">UGX 88,000</div>
-        <div class="receipt__row"><span>Method</span><span>SoftPOS</span></div>
-        <div class="receipt__row"><span>Status</span><span class="ok">Approved</span></div>
-        <div class="receipt__bar"></div>
+        <div class="pos-visual__badge pos-visual__badge--tl">
+          <span class="pos-dot pos-dot--green"></span>MTN MoMo live
+        </div>
+        <div class="pos-visual__badge pos-visual__badge--br">
+          <span class="pos-dot pos-dot--red"></span>Airtel Money live
+        </div>
       </div>
     </ng-template>
 
@@ -194,49 +184,35 @@ import { Product } from '../site-content';
     .features__body { font-size: 14px; color: var(--bv-text-muted); }
     .tagline { font: 400 13px/1.5 var(--bv-mono); color: var(--bv-text-muted); margin: 0 0 24px; }
 
-    /* Phone */
-    .product__visual { position: relative; min-height: 540px; display: flex; align-items: center; justify-content: center; }
-    .phone {
-      width: 280px; aspect-ratio: 280/580;
-      background: var(--bv-navy); border-radius: 36px; padding: 12px;
+    /* POS visual */
+    .product__visual { position: relative; min-height: 480px; display: flex; align-items: center; justify-content: center; }
+    .pos-visual { position: relative; width: 100%; }
+    .pos-visual__frame {
+      border-radius: 12px; overflow: hidden;
       box-shadow: var(--bv-shadow-float);
-      position: relative;
-      transform: rotate(-3deg);
+      border: 1px solid var(--bv-border);
     }
-    .phone__notch { position: absolute; top: 18px; left: 50%; transform: translateX(-50%); width: 88px; height: 22px; background: black; border-radius: 999px; z-index: 2; }
-    .phone__screen { background: white; border-radius: 26px; padding: 36px 16px 20px; height: 100%; overflow: hidden; }
-    .phone__row { display: flex; justify-content: space-between; font: 600 12px/1 var(--bv-font); color: var(--bv-text-muted); }
-    .phone__balance { margin: 18px 0 16px; padding: 16px; background: linear-gradient(135deg, #7C3AED, #4C1D95); border-radius: 14px; color: white; }
-    .phone__balance-label { font-size: 11px; opacity: 0.8; }
-    .phone__balance-amount { font: 800 26px/1 var(--bv-font); letter-spacing: -0.02em; margin-top: 4px; }
-    .phone__actions { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 18px; }
-    .phone__action { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px 4px; background: var(--bv-bg-soft); border-radius: 10px; font-size: 10px; }
-    .phone__action span { width: 24px; height: 24px; border-radius: 999px; background: var(--bv-bg-mid); display: inline-flex; align-items: center; justify-content: center; color: var(--bv-blue); font-weight: 700; }
-    .phone__list-title { font: 600 11px/1 var(--bv-font); letter-spacing: 0.08em; color: var(--bv-text-muted); text-transform: uppercase; margin-bottom: 8px; }
-    .phone__list { list-style: none; padding: 0; margin: 0; }
-    .phone__list li { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--bv-border); font-size: 12px; }
-    .phone__list li:last-child { border-bottom: none; }
-    .phone__list small { display: block; color: var(--bv-text-muted); font-size: 10px; }
-    .phone__list strong { font-weight: 600; }
-    .phone__avatar { width: 28px; height: 28px; border-radius: 999px; background: var(--bv-blue); color: white; display: inline-flex; align-items: center; justify-content: center; font: 700 11px/1 var(--bv-font); }
-    .phone__avatar.bg-yellow { background: var(--bv-yellow); color: var(--bv-text); }
-    .phone__avatar.bg-navy { background: var(--bv-navy); color: white; }
-    .phone__list div { flex: 1; }
-    .phone__amt { font: 600 12px/1 var(--bv-font); color: #16A34A; }
-    .phone__amt.neg { color: var(--bv-text); }
-
-    .receipt {
-      position: absolute; bottom: 6%; right: 0;
-      width: 220px; padding: 18px;
-      background: white; border-radius: var(--bv-radius);
-      border: 1px solid var(--bv-border); box-shadow: var(--bv-shadow-float);
-      transform: rotate(6deg);
+    .pos-visual__bar {
+      display: flex; align-items: center; gap: 6px; padding: 10px 14px;
+      background: #F1F5F9; border-bottom: 1px solid var(--bv-border);
     }
-    .receipt__top { font: 600 10px/1 var(--bv-mono); letter-spacing: 0.1em; color: var(--bv-text-muted); }
-    .receipt__amt { font: 800 32px/1 var(--bv-font); letter-spacing: -0.02em; margin: 10px 0 14px; }
-    .receipt__row { display: flex; justify-content: space-between; font-size: 12px; padding: 6px 0; border-top: 1px dashed var(--bv-border); }
-    .receipt__row .ok { color: #16A34A; font-weight: 600; }
-    .receipt__bar { height: 36px; background: repeating-linear-gradient(90deg, var(--bv-text) 0 2px, transparent 2px 5px); margin-top: 10px; }
+    .pos-visual__bar .d { width: 10px; height: 10px; border-radius: 999px; }
+    .pos-visual__bar .r { background: #FF6B6B; }
+    .pos-visual__bar .y { background: #F8D613; }
+    .pos-visual__bar .g { background: #4ADE80; }
+    .pos-visual__url { margin-left: 10px; font: 500 11px/1 var(--bv-mono); color: var(--bv-text-muted); }
+    .pos-visual__img { display: block; width: 100%; height: auto; }
+    .pos-visual__badge {
+      position: absolute; display: inline-flex; align-items: center; gap: 7px;
+      padding: 8px 14px; background: white; border: 1px solid var(--bv-border);
+      border-radius: 999px; font: 600 12px/1 var(--bv-font); color: var(--bv-text);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08); white-space: nowrap;
+    }
+    .pos-visual__badge--tl { top: -14px; left: 12px; }
+    .pos-visual__badge--br { bottom: -14px; right: 12px; }
+    .pos-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .pos-dot--green { background: #22C55E; box-shadow: 0 0 0 3px rgba(34,197,94,0.2); }
+    .pos-dot--red   { background: #EF4444; box-shadow: 0 0 0 3px rgba(239,68,68,0.2); }
 
     /* Cloud */
     .cloud { position: relative; width: 100%; aspect-ratio: 1.1/1; }

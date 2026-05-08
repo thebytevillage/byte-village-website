@@ -119,7 +119,7 @@ export const TRUST_LOGOS: TrustLogo[] = [
 //   2. Add the matching i18n keys to src/locale/strings.{en,fr,sw}.ts.
 //   3. (Optional) Add a custom visual variant by extending product.component.
 // ----------------------------------------------------------------------------
-export type ProductVisualKind = 'phone' | 'cloud' | 'code' | 'pipeline';
+export type ProductVisualKind = 'pos' | 'cloud' | 'code' | 'pipeline';
 
 export interface ProductFeature {
   iconGlyph: string;
@@ -146,15 +146,15 @@ export interface Product {
 export const PRODUCTS: Product[] = [
   {
     id: 'alfasente',
-    visualKind: 'phone',
+    visualKind: 'pos',
     tagGlyph: '💳',
     tagKey: 'product.alfasente.tag',
     titleKey: 'product.alfasente.title',
     bodyKey: 'product.alfasente.body',
     features: [
-      { iconGlyph: '↓',  titleKey: 'product.alfasente.feat.collect.title',  bodyKey: 'product.alfasente.feat.collect.body' },
-      { iconGlyph: '↑',  titleKey: 'product.alfasente.feat.payout.title',   bodyKey: 'product.alfasente.feat.payout.body' },
-      { iconGlyph: '▢',  titleKey: 'product.alfasente.feat.pos.title',      bodyKey: 'product.alfasente.feat.pos.body' },
+      { iconGlyph: '▦',  titleKey: 'product.alfasente.feat.collect.title',  bodyKey: 'product.alfasente.feat.collect.body' },
+      { iconGlyph: '⇶',  titleKey: 'product.alfasente.feat.payout.title',   bodyKey: 'product.alfasente.feat.payout.body' },
+      { iconGlyph: '◈',  titleKey: 'product.alfasente.feat.pos.title',      bodyKey: 'product.alfasente.feat.pos.body' },
       { iconGlyph: '{}', titleKey: 'product.alfasente.feat.api.title',      bodyKey: 'product.alfasente.feat.api.body' },
     ],
     taglineKey: 'product.alfasente.tagline',
