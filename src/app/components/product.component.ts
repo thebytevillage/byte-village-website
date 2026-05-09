@@ -228,7 +228,7 @@ import { Product } from '../site-content';
     }
     .cloud__pill--top { top: 6%; left: 4%; }
     .cloud__pill--bot { bottom: 6%; right: 6%; background: var(--bv-yellow); }
-    .cloud__pill--side { top: 50%; right: -2%; }
+    .cloud__pill--side { top: 50%; right: 2%; }
 
     /* Code */
     .code { width: 100%; max-width: 540px; background: #0B0F2C; border-radius: var(--bv-radius); overflow: hidden; box-shadow: var(--bv-shadow-float); border: 1px solid rgba(255,255,255,0.08); }
